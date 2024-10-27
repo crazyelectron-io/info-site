@@ -6,7 +6,6 @@ RUN         curl -#L -o webhook.tar.gz https://api.github.com/repos/adnanh/webho
             tar -xzf webhook.tar.gz --strip 1 &&  \
             go get -d && \
             go build -ldflags="-s -w" -o /usr/local/bin/webhook
-
 FROM        alpine:3.20.1
 RUN         apk add --update --no-cache curl jq tini tzdata
 COPY        --from=BUILD_IMAGE /usr/local/bin/webhook /usr/local/bin/webhook
