@@ -52,7 +52,7 @@ jobs:
 
       - name: Log in to Harbor Registry
         if: github.event_name != 'pull_request'
-        uses: docker/login-action@v2
+        uses: docker/login-action@v3
         with:
           registry: registry.moerman.online
           username: ${{ secrets.HARBOR_USER }}
