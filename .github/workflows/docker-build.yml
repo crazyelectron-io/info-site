@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
@@ -69,7 +69,7 @@ jobs:
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
 
-      # - uses: actions/checkout@v3
+      # - uses: actions/checkout@v4
       # - name: BuildAndPushImageOnHarbor
       #   run: |
       #     docker build ./ -t registry.moerman.online/library/info-site:${{ github.run_number }}
